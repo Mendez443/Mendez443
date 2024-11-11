@@ -1,0 +1,32 @@
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(255),
+    grade INT,
+    favorite_subject VARCHAR(50)
+);
+
+INSERT INTO students (student_id, name, grade, favorite_subject) VALUES
+ (1, 'Alice Johnson', 7, 'Math');
+
+INSERT INTO students (student_id, name, grade, favorite_subject) VALUES
+ (2, 'Bob Smith', 8, 'Science');
+
+INSERT INTO students (student_id, name, grade, favorite_subject) VALUES
+ (3, 'Charlie Brown', 9, 'Filipino');
+
+
+INSERT INTO students (student_id, name, grade, favorite_subject) VALUES
+ (4, 'Diana Jones', 10, 'English');
+
+
+INSERT INTO students (student_id, name, grade, favorite_subject) VALUES
+ (5, 'Ethan Davis', 7, 'Art');
+
+SELECT * FROM students;
+
+SELECT * FROM students WHERE grade = 7;
+
+SELECT * FROM students WHERE favorite_subject = 'Math';
+
+
+
