@@ -1,0 +1,9 @@
+DECLARE
+    employee_name VARCHAR2(50) := 'John Doe';
+    salary NUMBER := 60000;
+    hire_date DATE := DATE '2023-01-15';
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || employee_name);
+    DBMS_OUTPUT.PUT_LINE('Salary: ' || salary);
+    DBMS_OUTPUT.PUT_LINE('Hire Date: ' || hire_date);
+END;
