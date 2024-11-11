@@ -1,1 +1,18 @@
+DECLARE
+    
+    goal_hours NUMBER := 100; 
+    
+    current_hours NUMBER := 50; 
+    
+    progress_percentage NUMBER := (current_hours / goal_hours) * 100; 
+BEGIN
+    
+    DBMS_OUTPUT.PUT_LINE('Reading Goal: ' || goal_hours || ' hours');
+    DBMS_OUTPUT.PUT_LINE('Current Hours Read: ' || current_hours || ' hours');
+    DBMS_OUTPUT.PUT_LINE('Progress: ' || progress_percentage || '%');
 
+    
+    IF current_hours >= goal_hours THEN
+        DBMS_OUTPUT.PUT_LINE('Congratulations! You have reached your reading goal!');
+    END IF;
+END;
