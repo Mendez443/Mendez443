@@ -1,0 +1,54 @@
+CREATE TABLE pilipino_club (
+    member_id INT PRIMARY KEY,
+    member_name VARCHAR(255)
+);
+
+CREATE TABLE art_club (
+    member_id INT PRIMARY KEY,
+    member_name VARCHAR(255)
+);
+
+INSERT INTO pilipino_club (member_id, member_name) VALUES
+    (1, 'Maria Santos');
+    
+INSERT INTO pilipino_club (member_id, member_name) VALUES
+    (2, 'Juan Dela Cruz');
+
+INSERT INTO pilipino_club (member_id, member_name) VALUES
+    (3, 'Elena Garcia');
+
+
+INSERT INTO art_club (member_id, member_name) VALUES
+    (1, 'Mark Santos');
+
+INSERT INTO art_club (member_id, member_name) VALUES  
+    (2, 'David Lee');
+
+INSERT INTO art_club (member_id, member_name) VALUES
+    (3, 'Sarah Kim');
+
+SELECT * pilipino_club.member_name 
+ 
+FROM pilipino_club 
+ 
+JOIN art_club ON pilipino_club.member_id = art_club.member_id;
+
+
+SELECT * pilipino_club.member_name 
+ 
+FROM pilipino_club 
+ 
+LEFT JOIN art_club ON pilipino_club.member_id = art_club.member_id;
+
+
+SELECT * pilipino_club.member_name 
+ 
+FROM pilipino_club 
+ 
+RIGHT JOIN art_club ON pilipino_club.member_id = art_club.member_id;
+
+SELECT * pilipino_club.member_name 
+ 
+FROM pilipino_club 
+ 
+FULL JOIN art_club ON pilipino_club.member_id = art_club.member_id;
