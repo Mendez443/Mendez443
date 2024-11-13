@@ -1,0 +1,28 @@
+ALTER TABLE Artists ADD genre VARCHAR(50)
+
+ALTER TABLE Albumss ADD duration NUMBER
+
+ALTER TABLE Artists ADD CONSTRAINT unique_genre UNIQUE (genre)
+
+INSERT INTO Artists (artist_id, artist_name, email, genre) 
+VALUES (5, 'New Artist', 'newartist@example.com', 'Pop');
+
+INSERT INTO Artists (artist_id, artist_name, email, genre) 
+VALUES (6, 'Another Artist', 'another@example.com', 'Jazz');
+
+INSERT INTO Albumss (album_id, album_title, release_year, artist_id, duration)
+VALUES (5, 'New Album', 2023, 5, 50);
+
+INSERT INTO Albumss (album_id, album_title, release_year, artist_id, duration)
+VALUES (6, 'Another Album', 2024, 6, 45);
+
+Maintaining Database Integrity with Unique Constraints 
+Unique constraints are a fundamental aspect of database design that play a critical role in maintaining data integrity. 
+They prevent duplicate records, ensure data consistency, support referential integrity, catch errors, enforce business rules, and facilitate easier data management.  
+By enforcing uniqueness, these constraints help create a reliable, accurate, and efficient database system that enhances data quality and supports effective decision-making. 
+  
+The accuracy of data by preventing duplicates and ensuring consistency,  
+while they improve the usability of data by simplifying retrieval processes, 
+enhancing user confidence, and streamlining data management tasks.  
+These factors collectively contribute to a more reliable and efficient database system, ultimately supporting better decision-making and operational effectiveness.
+
