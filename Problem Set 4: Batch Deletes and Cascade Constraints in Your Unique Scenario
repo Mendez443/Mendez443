@@ -1,0 +1,45 @@
+CREATE TABLE Artists ( 
+    artist_id NUMBER PRIMARY KEY, 
+    artist_name VARCHAR(100) UNIQUE, 
+    email VARCHAR(100) UNIQUE 
+);
+
+CREATE TABLE Albumss( 
+    album_id NUMBER PRIMARY KEY , 
+    album_title VARCHAR(100) UNIQUE, 
+    release_year NUMBER, 
+    artist_id NUMBER, 
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id) 
+);
+
+
+
+INSERT INTO Artists (artist_id, artist_name, email) VALUES (1, 'The Beatles', 'beatles@example.com');
+INSERT INTO Artists (artist_id, artist_name, email) VALUES (2, 'Queen', 'queen@example.com');
+INSERT INTO Artists (artist_id, artist_name, email) VALUES (3, 'Elton John', 'elton@example.com');
+INSERT INTO Artists (artist_id, artist_name, email) VALUES (4, 'Madonna', 'madonna@example.com');
+
+INSERT INTO Albumss (album_id, album_title, release_year, artist_id)  
+VALUES (1, 'Abbey Road', 1969, 1);
+INSERT INTO Albumss (album_id, album_title, release_year, artist_id) 
+VALUES (2, 'A Night at the Opera', 1975, 2);
+INSERT INTO Albumss (album_id, album_title, release_year, artist_id)
+VALUES (3, 'Goodbye Yellow Brick Road', 1973, 3);
+INSERT INTO Albumss (album_id, album_title, release_year, artist_id) 
+VALUES (4, 'Like a Virgin', 1984, 4);
+
+
+Batch Deletes and Cascade Constraints in Your Unique Scenario
+Delete Records Based on a Condition
+Drop a Table with Cascade Constraints
+
+
+
+DELETE FROM Albumss 
+WHERE release_year < 1980;
+
+DELETE FROM Albumss 
+WHERE artist_id = 1;
+
+DROP TABLE Albumss CASCADE CONSTRAINTS;
+
