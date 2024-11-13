@@ -1,0 +1,47 @@
+CREATE TABLE Artistss (  
+    artist_id NUMBER PRIMARY KEY,  
+    artist_name VARCHAR(100) UNIQUE,  
+    email VARCHAR(100) UNIQUE  
+);
+CREATE TABLE Albumsss (  
+    album_id NUMBER PRIMARY KEY,  
+    album_title VARCHAR(100) UNIQUE,  
+    release_year NUMBER,  
+    artist_id NUMBER,  
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)  
+);
+
+INSERT INTO Artistss (artist_id, artist_name, email)
+VALUES (1, 'The Beatles', 'beatles@example.com');
+
+INSERT INTO Artistss (artist_id, artist_name, email)
+VALUES (2, 'Queen', 'queen@example.com');
+
+INSERT INTO Artistss (artist_id, artist_name, email)
+VALUES (3, 'Elton John', 'elton@example.com');
+
+INSERT INTO Artistss (artist_id, artist_name, email)
+VALUES (4, 'Madonna', 'madonna@example.com');
+
+
+
+INSERT INTO Albumsss (album_id, album_title, release_year, artist_id)   
+VALUES (1, 'Abbey Road', 1969, 1)
+
+INSERT INTO Albumsss (album_id, album_title, release_year, artist_id)  
+VALUES (2, 'A Night at the Opera', 1975, 2)
+
+INSERT INTO Albumsss (album_id, album_title, release_year, artist_id)  
+VALUES (3, 'Goodbye Yellow Brick Road', 1973, 3)
+
+INSERT INTO Albumsss (album_id, album_title, release_year, artist_id)  
+VALUES (4, 'Like a Virgin', 1984, 4)
+
+
+
+INSERT INTO Artists (artist_id, artist_name, email) VALUES (5, 'The Beatles', 'beatles2@example.com')
+1. Error Messages:  ORA-00001: unique constraint (SQL_YCFVLXZOKBDTEPXHUWMYKNQRZ.SYS_C00173005221) violated ORA-06512: at "SYS.DBMS_SQL", line 1721
+
+This error indicates that an attempt was made to insert a record that conflicts with an existing entry due to a unique constraint on a column (or a set of columns).
+Meaning: The error signals that the value you're trying to insert (e.g., an artist_name or album_title) already exists in the database, violating the uniqueness rule established for that column.
+
