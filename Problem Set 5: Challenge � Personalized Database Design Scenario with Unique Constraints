@@ -1,0 +1,25 @@
+CREATE TABLE Artists ( 
+    artist_id NUMBER PRIMARY KEY, 
+    artist_name VARCHAR(100) UNIQUE, 
+    email VARCHAR(100) UNIQUE 
+);
+
+CREATE TABLE Albumss( 
+    album_id NUMBER PRIMARY KEY , 
+    album_title VARCHAR(100) UNIQUE, 
+    release_year NUMBER, 
+    artist_id NUMBER, 
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id) 
+);
+
+
+
+ALTER TABLE Albumss 
+ADD duration NUMBER;
+
+Reflection:
+Using unique constraints and foreign keys significantly enhances the accuracy and reliability of a database.
+Unique constraints prevent duplicate entries, ensuring that each record is distinct, while foreign keys maintain referential integrity by linking related tables and preventing orphaned records.
+
+These features simplify data retrieval by allowing intuitive queries and streamline data management by automating updates and deletions of related records. 
+Overall, they create a coherent structure that reduces errors, ensures consistency, and facilitates better decision-making, making the database more robust and user-friendly.
